@@ -24,6 +24,7 @@ public class Question {
     private String option4;
     @NotBlank(message = "Correct Answer Title cannot be empty")
     private String correctAnswer;
+    @NotBlank(message = "Difficulty cannot be empty")
     @Pattern(regexp = "Hard|Medium|Easy")
     private String difficulty;
     @NotBlank(message = "Category Title cannot be empty")

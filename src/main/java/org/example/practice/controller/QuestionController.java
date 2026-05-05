@@ -1,7 +1,6 @@
 package org.example.practice.controller;
 
 import jakarta.validation.Valid;
-import org.apache.coyote.Response;
 import org.example.practice.model.Question;
 import org.example.practice.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +50,7 @@ public class QuestionController {
         return new ResponseEntity<>(questionService.getQuestionByDifficulty(difficulty),HttpStatus.OK);
     }
     @GetMapping("/category/{category}")
-    public ResponseEntity<List<Question>> findQuestionByCategory(@PathVariable @RequestParam String category){
+    public ResponseEntity<List<Question>> findQuestionByCategory(@PathVariable String category){
         return  new ResponseEntity<>(questionService.getQuestionByCategory(category),HttpStatus.OK);
     }
     @GetMapping("/search")
